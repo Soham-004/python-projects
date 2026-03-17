@@ -1,0 +1,19 @@
+#Check The accuracy 
+accuracy = model.score(X_test,Y_test)
+print("Accuracy: ",accuracy)
+
+
+#Take the user input to check the email as spam or not
+email = input("Enter the email : ")
+email_vector = vectorizer.transform([email])
+
+
+#Prediction 
+prediction = model.predict(email_vector)
+
+#Show the result
+if prediction[0] == 1:
+    print("SPAM")
+else :
+    print("NOT SPAM")
+
